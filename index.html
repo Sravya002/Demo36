@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Website Collection</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #f0f0f0, #dbeafe);
+      color: #333;
+      text-align: center;
+      padding: 50px;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      color: #1d4ed8;
+      margin-bottom: 40px;
+    }
+
+    .websites {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 25px;
+    }
+
+    .site {
+      background: white;
+      width: 70%;
+      max-width: 600px;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+
+    .site:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .site h2 {
+      font-size: 1.8rem;
+      color: #2563eb;
+      margin: 0;
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 0.9rem;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Explore Popular Websites 🌐</h1>
+
+  <div class="websites">
+    <div class="site"><h2>Google</h2></div>
+    <div class="site"><h2>YouTube</h2></div>
+    <div class="site"><h2>Instagram</h2></div>
+    <div class="site"><h2>Amazon</h2></div>
+    <div class="site"><h2>Netflix</h2></div>
+  </div>
+
+  <footer>© 2025 Website Collection</footer>
+
+  <script>
+    // Click effect to open sites
+    const sites = document.querySelectorAll(".site");
+    const links = {
+      "Google": "https://www.google.com",
+      "YouTube": "https://www.youtube.com",
+      "Instagram": "https://www.instagram.com",
+      "Amazon": "https://www.amazon.com",
+      "Netflix": "https://www.netflix.com"
+    };
+
+    sites.forEach(site => {
+      site.addEventListener("click", () => {
+        const name = site.textContent.trim();
+        if (links[name]) {
+          window.open(links[name], "_blank");
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
